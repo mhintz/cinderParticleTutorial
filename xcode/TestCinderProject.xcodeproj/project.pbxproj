@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,13 @@
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		F38351DF6FF948F89013D0E9 /* TestCinderProject_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 44AADE4A8E3F474AAB6BD5AE /* TestCinderProject_Prefix.pch */; };
-		EB8802E21B994FEEB9056A6B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 47247793D70A4B11BB06E1A9 /* CinderApp.icns */; };
-		16C9A8DECE2143D4B42C6DB7 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = B662B141DE4C475C94AA00D8 /* Resources.h */; };
 		E52B04ABA4E8496E8A1CAA81 /* TestCinderProjectApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61167553877246CD94EB4B53 /* TestCinderProjectApp.cpp */; };
+		EB8802E21B994FEEB9056A6B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 47247793D70A4B11BB06E1A9 /* CinderApp.icns */; };
+		EF14615118C2E166005DFCF4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF14615018C2E166005DFCF4 /* image.jpg */; };
+		EF14615318C2E2DF005DFCF4 /* lilbub.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */; };
+		EF14615518C3E9DD005DFCF4 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615418C3E9DD005DFCF4 /* Util.cpp */; };
+		EF14615C18C41386005DFCF4 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615A18C41386005DFCF4 /* Particle.cpp */; };
+		EF14615F18C4151B005DFCF4 /* ParticleController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615D18C4151B005DFCF4 /* ParticleController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +33,22 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		44AADE4A8E3F474AAB6BD5AE /* TestCinderProject_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = TestCinderProject_Prefix.pch; sourceTree = "<group>"; };
+		47247793D70A4B11BB06E1A9 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		61167553877246CD94EB4B53 /* TestCinderProjectApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = TestCinderProjectApp.cpp; path = ../src/TestCinderProjectApp.cpp; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TestCinderProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCinderProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		61167553877246CD94EB4B53 /* TestCinderProjectApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/TestCinderProjectApp.cpp; sourceTree = "<group>"; name = TestCinderProjectApp.cpp; };
-		B662B141DE4C475C94AA00D8 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		47247793D70A4B11BB06E1A9 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		BDC52ECB679345F0B23AEF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		44AADE4A8E3F474AAB6BD5AE /* TestCinderProject_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = TestCinderProject_Prefix.pch; sourceTree = "<group>"; name = TestCinderProject_Prefix.pch; };
+		B662B141DE4C475C94AA00D8 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		BDC52ECB679345F0B23AEF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF14615018C2E166005DFCF4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../resources/image.jpg; sourceTree = "<group>"; };
+		EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lilbub.jpeg; path = ../resources/lilbub.jpeg; sourceTree = "<group>"; };
+		EF14615418C3E9DD005DFCF4 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = ../src/Util.cpp; sourceTree = "<group>"; };
+		EF14615618C3F06B005DFCF4 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Util.h; path = ../include/Util.h; sourceTree = "<group>"; };
+		EF14615A18C41386005DFCF4 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		EF14615B18C41386005DFCF4 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
+		EF14615D18C4151B005DFCF4 /* ParticleController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleController.cpp; sourceTree = "<group>"; };
+		EF14615E18C4151B005DFCF4 /* ParticleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +70,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				EF14615D18C4151B005DFCF4 /* ParticleController.cpp */,
+				EF14615A18C41386005DFCF4 /* Particle.cpp */,
 				61167553877246CD94EB4B53 /* TestCinderProjectApp.cpp */,
+				EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */,
+				EF14615418C3E9DD005DFCF4 /* Util.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -112,18 +134,14 @@
 			name = TestCinderProject;
 			sourceTree = "<group>";
 		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				B662B141DE4C475C94AA00D8 /* Resources.h */,
+				EF14615B18C41386005DFCF4 /* Particle.h */,
+				EF14615E18C4151B005DFCF4 /* ParticleController.h */,
 				44AADE4A8E3F474AAB6BD5AE /* TestCinderProject_Prefix.pch */,
+				EF14615618C3F06B005DFCF4 /* Util.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -131,6 +149,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF14615018C2E166005DFCF4 /* image.jpg */,
 				47247793D70A4B11BB06E1A9 /* CinderApp.icns */,
 				BDC52ECB679345F0B23AEF17 /* Info.plist */,
 			);
@@ -172,6 +191,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TestCinderProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -197,6 +218,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB8802E21B994FEEB9056A6B /* CinderApp.icns in Resources */,
+				EF14615118C2E166005DFCF4 /* image.jpg in Resources */,
+				EF14615318C2E2DF005DFCF4 /* lilbub.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52B04ABA4E8496E8A1CAA81 /* TestCinderProjectApp.cpp in Sources */,
+				EF14615C18C41386005DFCF4 /* Particle.cpp in Sources */,
+				EF14615518C3E9DD005DFCF4 /* Util.cpp in Sources */,
+				EF14615F18C4151B005DFCF4 /* ParticleController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,24 +244,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TestCinderProject_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TestCinderProject_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
 				PRODUCT_NAME = TestCinderProject;
-				WRAPPER_EXTENSION = app;
 				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -257,19 +283,19 @@
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
 				PRODUCT_NAME = TestCinderProject;
 				STRIP_INSTALLED_PRODUCT = YES;
-				WRAPPER_EXTENSION = app;
 				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = i386;
-				CINDER_PATH = "../../cinder";
+				CINDER_PATH = ../../cinder;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
@@ -282,11 +308,11 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = i386;
-				CINDER_PATH = "../../cinder";
+				CINDER_PATH = ../../cinder;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
