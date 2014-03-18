@@ -13,53 +13,31 @@
 using namespace ci;
 using namespace std;
 
-ParticleController::ParticleController() {
-}
+ParticleController::ParticleController() {}
 
-ParticleController::ParticleController( int res ) {
-    mRes = res;
-    mXRes = app::getWindowWidth() / res;
-    mYRes = app::getWindowHeight() / res;
-    
-    for ( int y = 0; y < mYRes; y++) {
-        for (int x = 0; x < mXRes; x++) {
-            addParticle( x, y );
+void ParticleController::update( const Channel32f & channel, const Vec2i & mouseLoc ) {
+    for (list<Particle>::iterator prtcl = mParticles.begin(); prtcl != mParticles.end(); ) {
+        if (prtcl->isDead) {
+            prtcl = mParticles.erase(prtcl);
+        } else {
+            prtcl->update( channel, mouseLoc );
+            ++prtcl;
         }
     }
 }
 
-void ParticleController::update() {
-    for (list<Particle>::iterator iter = mParticles.begin(); iter != mParticles.end(); ++iter) {
-        iter->update();
-    }
-}
-
-void ParticleController::update( const Channel32f & channel ) {
-    for (list<Particle>::iterator iter = mParticles.begin(); iter != mParticles.end(); ++iter) {
-        iter->update( channel );
-    }
-}
-
 void ParticleController::draw() {
-    for (list<Particle>::iterator iter = mParticles.begin(); iter != mParticles.end(); ++iter) {
-        iter->draw();
+    for (list<Particle>::iterator prtcl = mParticles.begin(); prtcl != mParticles.end(); ++prtcl) {
+        prtcl->draw();
     }
 }
 
-void ParticleController::addParticles( int amt ) {
+void ParticleController::addParticles( int amt, const Vec2i & mouseLoc, const Vec2f & mouseVel  ) {
     for (int i = 0; i < amt; i++) {
-        float x = Rand::randFloat( app::getWindowWidth() );
-        float y = Rand::randFloat( app::getWindowHeight() );
+        Vec2f randVec = Rand::randVec2f() * 10.0f;
         
-        mParticles.push_back( Particle( Vec2f(x, y) ) );
+        mParticles.push_back( Particle( mouseLoc + randVec ) );
     }
-}
-
-void ParticleController::addParticle( int xi, int yi ) {
-    float x = (xi + 0.5f) * mRes;
-    float y = (yi + 0.5f) * mRes;
-    
-    mParticles.push_back( Particle( Vec2f( x, y ) ) );
 }
 
 void ParticleController::removeParticles(int amt) {

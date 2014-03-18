@@ -19,7 +19,6 @@
 		EB8802E21B994FEEB9056A6B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 47247793D70A4B11BB06E1A9 /* CinderApp.icns */; };
 		EF14615118C2E166005DFCF4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF14615018C2E166005DFCF4 /* image.jpg */; };
 		EF14615318C2E2DF005DFCF4 /* lilbub.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */; };
-		EF14615518C3E9DD005DFCF4 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615418C3E9DD005DFCF4 /* Util.cpp */; };
 		EF14615C18C41386005DFCF4 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615A18C41386005DFCF4 /* Particle.cpp */; };
 		EF14615F18C4151B005DFCF4 /* ParticleController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF14615D18C4151B005DFCF4 /* ParticleController.cpp */; };
 /* End PBXBuildFile section */
@@ -43,8 +42,6 @@
 		BDC52ECB679345F0B23AEF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF14615018C2E166005DFCF4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../resources/image.jpg; sourceTree = "<group>"; };
 		EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lilbub.jpeg; path = ../resources/lilbub.jpeg; sourceTree = "<group>"; };
-		EF14615418C3E9DD005DFCF4 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = ../src/Util.cpp; sourceTree = "<group>"; };
-		EF14615618C3F06B005DFCF4 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Util.h; path = ../include/Util.h; sourceTree = "<group>"; };
 		EF14615A18C41386005DFCF4 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
 		EF14615B18C41386005DFCF4 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
 		EF14615D18C4151B005DFCF4 /* ParticleController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleController.cpp; sourceTree = "<group>"; };
@@ -83,8 +80,6 @@
 				EF14615D18C4151B005DFCF4 /* ParticleController.cpp */,
 				EF14615A18C41386005DFCF4 /* Particle.cpp */,
 				61167553877246CD94EB4B53 /* TestCinderProjectApp.cpp */,
-				EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */,
-				EF14615418C3E9DD005DFCF4 /* Util.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -141,7 +136,6 @@
 				EF14615B18C41386005DFCF4 /* Particle.h */,
 				EF14615E18C4151B005DFCF4 /* ParticleController.h */,
 				44AADE4A8E3F474AAB6BD5AE /* TestCinderProject_Prefix.pch */,
-				EF14615618C3F06B005DFCF4 /* Util.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -149,6 +143,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF14615218C2E2DF005DFCF4 /* lilbub.jpeg */,
 				EF14615018C2E166005DFCF4 /* image.jpg */,
 				47247793D70A4B11BB06E1A9 /* CinderApp.icns */,
 				BDC52ECB679345F0B23AEF17 /* Info.plist */,
@@ -233,7 +228,6 @@
 			files = (
 				E52B04ABA4E8496E8A1CAA81 /* TestCinderProjectApp.cpp in Sources */,
 				EF14615C18C41386005DFCF4 /* Particle.cpp in Sources */,
-				EF14615518C3E9DD005DFCF4 /* Util.cpp in Sources */,
 				EF14615F18C4151B005DFCF4 /* ParticleController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

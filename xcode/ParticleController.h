@@ -9,24 +9,22 @@
 #ifndef __TestCinderProject__ParticleController__
 #define __TestCinderProject__ParticleController__
 
-#include "Particle.h"
 #include <list>
+
+#include "cinder/Channel.h"
+#include "cinder/Perlin.h"
+
+#include "Particle.h"
 
 class ParticleController {
 public:
     ParticleController();
-    ParticleController( int );
-    void update();
-    void update( const ci::Channel32f & );
+    void update( const ci::Channel32f &, const ci::Vec2i & );
     void draw();
-    void addParticles( int );
-    void addParticle( int, int );
+    void addParticles( int, const ci::Vec2i &, const ci::Vec2f & );
     void removeParticles( int );
     
     std::list<Particle> mParticles;
-    int mRes;
-    int mXRes;
-    int mYRes;
 };
 
 #endif /* defined(__TestCinderProject__ParticleController__) */

@@ -1,12 +1,16 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Perlin.h"
 #include "cinder/Channel.h"
+#include "cinder/Vector.h"
+#include "cinder/Utilities.h"
 
 #include "Util.h"
 #include "ParticleController.h"
 
-#define RESOLUTION 5
+#define RESOLUTION 10
+#define NUM_PARTICLES_TO_SPAWN 5
 
 using namespace ci;
 using namespace ci::app;
@@ -14,43 +18,103 @@ using namespace std;
 
 class TestCinderProjectApp : public AppNative {
 public:
-    void prepareSettings( Settings* settings );
+    void prepareSettings( Settings* );
 	void setup();
-	void mouseDown( MouseEvent event );
-    void mouseMove( MouseEvent event );
 	void update();
 	void draw();
-    ParticleController mParticleController;
+
+    void keyDown( KeyEvent );
+	void mouseDown( MouseEvent );
+    void mouseUp( MouseEvent );
+    void mouseMove( MouseEvent );
+    void mouseDrag( MouseEvent );
+    
+    Perlin mPerlin;
+    
     Channel32f mChannel;
+    gl::Texture mTexture;
+    
+    ParticleController mParticleController;
+    
+    Vec2i mMouseLoc;
+    Vec2f mMouseVel;
+
+    bool mousePressed;
+    bool mDrawParticles;
+    bool mDrawImage;
+    bool mSaveFrames;
 };
 
 void TestCinderProjectApp::prepareSettings( Settings* settings ) {
-    settings->setWindowSize( 197, 256 );
+    settings->setWindowSize( 800, 600 );
     settings->setFrameRate( 60.0f );
 }
 
 void TestCinderProjectApp::setup() {
-    mParticleController = ParticleController( RESOLUTION );
-    mChannel = Channel32f ( loadImage ( loadResource( "lilbub.jpeg" ) ) );
+    mPerlin = Perlin();
+    
+    Url catUrl( "http://libcinder.org/media/tutorial/paris.jpg" );
+    mChannel = Channel32f ( loadImage ( loadUrl( catUrl ) ) );
+    mTexture = mChannel;
+    
+    mMouseLoc = Vec2i( getWindowWidth() / 2, getWindowHeight() / 2 );
+    mMouseVel = Vec2f::zero();
+    mousePressed = false;
+    
+    mDrawParticles = true;
+    mDrawImage = false;
+    mSaveFrames = false;
 }
 
 void TestCinderProjectApp::mouseDown( MouseEvent event ) {
+    mousePressed = true;
+}
 
+void TestCinderProjectApp::mouseUp( MouseEvent event ) {
+    mousePressed = false;
 }
 
 void TestCinderProjectApp::mouseMove( MouseEvent event ) {
+    mMouseVel = (event.getPos() - mMouseLoc);
+    mMouseLoc = event.getPos();
+}
 
+void TestCinderProjectApp::mouseDrag( MouseEvent event ) {
+    mouseMove(event);
+}
+
+void TestCinderProjectApp::keyDown( KeyEvent event ) {
+    if (event.getChar() == '1') {
+        mDrawImage = !mDrawImage;
+    } else if (event.getChar() == '2') {
+        mDrawParticles = !mDrawParticles;
+    }
+    
+    if (event.getChar() == 's') {
+        mSaveFrames = !mSaveFrames;
+    }
 }
 
 void TestCinderProjectApp::update() {
-    mParticleController.update( mChannel );
+    if (!mChannel) return;
+    
+    if (mousePressed) {
+        mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
+    }
+    
+    mParticleController.update( mChannel, mMouseLoc );
 }
 
 void TestCinderProjectApp::draw() {
-	// clear out the window with black
-	gl::clear( Color( 0.0f, 0.0f, 0.0f ) );
+	gl::clear( Color( 0.0f, 0.0f, 0.0f ), true );
     
-    mParticleController.draw();
+    if ( mDrawImage ) {
+        gl::draw( mTexture, getWindowBounds() );
+    }
+    
+    if (mDrawParticles) {
+        mParticleController.draw();
+    }
 }
 
 CINDER_APP_NATIVE( TestCinderProjectApp, RendererGl );
