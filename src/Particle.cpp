@@ -49,24 +49,30 @@ Particle::Particle( Vec2f loc ) {
     mVel = Rand::randVec2f() * INITIAL_SPEED;
     
     mColor = randColor();
-    mRadius = Rand::randFloat(RAD_MAX);
+    mRadius = RAD_MAX;
     
+    isSquare = isTriangle = isCircle = false;
     float decider = Rand::randFloat();
     
     if (decider < 0.33) {
-        isTriangle = true;
-    } else if (decider < 0.66) {
         isSquare = true;
+    } else if (decider < 0.66) {
+        isTriangle = true;
+    } else {
+        isCircle = true;
     }
     
     age = 0;
-    lifetime = Rand::randInt(50, 250);
+    lifetime = Rand::randInt(50, 150);
     isDead = false;
 }
 
 void Particle::update( const Channel32f & channel, const ci::Vec2i & mouseLoc ) {
     if (++age > lifetime) isDead = true;
 
+    float ageRatio = 1.0f - ( age / (float) lifetime);
+    mRadius = RAD_MAX * ageRatio;
+    
     mVel *= DECAY;
     mLoc += mVel;
 }
@@ -80,7 +86,7 @@ void Particle::draw() {
     } else if (isSquare) {
         Rectf bounds(mLoc.x - mRadius, mLoc.y - mRadius, mLoc.x + mRadius, mLoc.y + mRadius);
         gl::drawSolidRect(bounds);
-    } else {
+    } else if (isCircle) {
         gl::drawSolidCircle(mLoc, mRadius);
     }
 }

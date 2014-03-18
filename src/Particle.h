@@ -25,6 +25,7 @@ public:
     
     bool isTriangle;
     bool isSquare;
+    bool isCircle;
     
     int age;
     int lifetime;

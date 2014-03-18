@@ -10,7 +10,7 @@
 #include "ParticleController.h"
 
 #define RESOLUTION 10
-#define NUM_PARTICLES_TO_SPAWN 5
+#define NUM_PARTICLES_TO_SPAWN 15
 
 using namespace ci;
 using namespace ci::app;
